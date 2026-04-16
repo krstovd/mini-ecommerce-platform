@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            // za da moze korisnikot da bide buyer,venodor ili i dvete
+            $table->boolean('is_buyer')->default(true);
+            $table->boolean('is_vendor')->default(false);
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
