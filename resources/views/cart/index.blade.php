@@ -64,7 +64,11 @@
                     <div class="text-right mt-4 font-bold">
                         Vendor subtotal: ${{ number_format($subtotal, 2) }}
                     </div>
+                    <a href="/checkout" class="bg-blue-600 text-black px-4 py-2 rounded">
+                        Proceed to Checkout
+                    </a>
                 </div>
+
             @empty
                 <div class="bg-white shadow rounded p-6 text-center text-gray-500">
                     Your cart is empty.

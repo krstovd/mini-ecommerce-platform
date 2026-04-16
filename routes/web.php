@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 
 Route::get('/', [MarketplaceController::class, 'index'])->name('marketplace.index');
@@ -39,6 +40,11 @@ Route::middleware(['auth', 'buyer'])->group(function () {
     Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
     Route::put('/cart/item/{cartItem}', [CartController::class, 'update'])->name('cart.update');
     Route::delete('/cart/item/{cartItem}', [CartController::class, 'remove'])->name('cart.remove');
+});
+
+Route::middleware(['auth', 'buyer'])->group(function () {
+    Route::get('/checkout', [CheckoutController::class, 'show']);
+    Route::post('/checkout', [CheckoutController::class, 'process']);
 });
 
 require __DIR__.'/auth.php';
