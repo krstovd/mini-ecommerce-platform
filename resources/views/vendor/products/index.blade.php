@@ -7,7 +7,7 @@
 
     <div class="py-8">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{ route('vendor.products.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">
+            <a href="{{ route('vendor.products.create') }}" class="bg-blue-600 text-black px-4 py-2 rounded mb-4 inline-block">
                 Add Product
             </a>
 
@@ -34,7 +34,7 @@
                             <td class="py-2">${{ number_format($product->price, 2) }}</td>
                             <td class="py-2">{{ $product->stock_quantity }}</td>
                             <td class="py-2 flex gap-2">
-                                <a href="{{ route('vendor.products.edit', $product) }}" class="bg-yellow-500 text-white px-3 py-1 rounded">
+                                <a href="{{ route('vendor.products.edit', $product) }}" class="bg-yellow-500 text-black px-3 py-1 rounded">
                                     Edit
                                 </a>
 

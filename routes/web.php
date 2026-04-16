@@ -6,6 +6,8 @@ use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\VendorOrderController;
 
 
 Route::get('/', [MarketplaceController::class, 'index'])->name('marketplace.index');
@@ -33,6 +35,8 @@ Route::middleware(['auth', 'vendor'])->prefix('vendor')->group(function () {
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('vendor.products.edit');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('vendor.products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('vendor.products.destroy');
+    Route::get('/orders', [VendorOrderController::class, 'index'])->name('vendor.orders.index');
+    Route::put('/orders/{orderItem}/status', [VendorOrderController::class, 'updateStatus'])->name('vendor.orders.update-status');
 });
 
 Route::middleware(['auth', 'buyer'])->group(function () {
@@ -45,6 +49,8 @@ Route::middleware(['auth', 'buyer'])->group(function () {
 Route::middleware(['auth', 'buyer'])->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'show']);
     Route::post('/checkout', [CheckoutController::class, 'process']);
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 });
 
 require __DIR__.'/auth.php';
