@@ -18,7 +18,8 @@ This is a Laravel-based mini e-commerce platform.
 ## Tech Stack
 
 - Laravel
-- Blade / Livewire
+- Blade 
+- Tailwind CSS
 - SQLite
 - PHPUnit
 
