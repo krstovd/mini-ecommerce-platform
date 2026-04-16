@@ -42,7 +42,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="number" name="quantity" min="1" value="{{ $item->quantity }}" class="border rounded px-3 py-2 w-24">
-                                <button type="submit" class="bg-blue-600 text-white px-3 py-2 rounded">
+                                <button type="submit" class="bg-blue-600 text-black px-3 py-2 rounded">
                                     Update
                                 </button>
                             </form>
@@ -54,7 +54,7 @@
                             <form method="POST" action="{{ route('cart.remove', $item) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-600 text-white px-3 py-2 rounded">
+                                <button type="submit" class="bg-red-600 text-black px-3 py-2 rounded">
                                     Remove
                                 </button>
                             </form>

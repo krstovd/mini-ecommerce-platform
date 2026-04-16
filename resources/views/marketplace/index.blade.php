@@ -45,7 +45,7 @@
                 >
 
                 <div class="md:col-span-4 flex gap-2">
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+                    <button type="submit" class="bg-blue-600 text-black px-4 py-2 rounded">
                         Filter
                     </button>
 
@@ -70,7 +70,7 @@
                             @if(auth()->user()->is_buyer)
                                 <form method="POST" action="{{ route('cart.add', $product) }}">
                                     @csrf
-                                    <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded">
+                                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-black font-semibold px-4 py-2 rounded shadow">
                                         Add to cart
                                     </button>
                                 </form>
